@@ -1,0 +1,25 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/les-cours", "destination": "/cours", "permanent": true },
+    { "source": "/notre-planning", "destination": "/planning", "permanent": true },
+    { "source": "/nos-tarifs-et-formules", "destination": "/tarifs", "permanent": true },
+    { "source": "/nos-professeurs-1", "destination": "/professeurs", "permanent": true },
+    { "source": "/copie-de-accueil", "destination": "/contact", "permanent": true },
+    { "source": "/blog", "destination": "/#videos", "permanent": true },
+    { "source": "/post/:slug*", "destination": "/#videos", "permanent": true },
+    { "source": "/mentions-l%C3%A9gales", "destination": "/mentions-legales", "permanent": true },
+    { "source": "/politique-de-confidentialit%C3%A9", "destination": "/politique-de-confidentialite", "permanent": true },
+    { "source": "/politique-en-mati%C3%A8re-de-cookies", "destination": "/politique-de-confidentialite", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}
