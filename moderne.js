@@ -32,6 +32,21 @@
     });
   });
 
+  // Lightbox galerie
+  var lb = document.getElementById('lightbox');
+  if(lb){
+    var lbImg = lb.querySelector('img');
+    document.querySelectorAll('.pg-item img').forEach(function(img){
+      img.addEventListener('click', function(){
+        lbImg.src = img.src; lbImg.alt = img.alt;
+        lb.removeAttribute('hidden'); document.body.style.overflow='hidden';
+      });
+    });
+    function closeLb(){ lb.setAttribute('hidden',''); document.body.style.overflow=''; }
+    lb.addEventListener('click', function(e){ if(e.target===lb || e.target.classList.contains('lb-close')) closeLb(); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !lb.hasAttribute('hidden')) closeLb(); });
+  }
+
   // Popup rentrée
   var modal = document.getElementById('rentree');
   if(modal){

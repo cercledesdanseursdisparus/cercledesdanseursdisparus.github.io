@@ -55,14 +55,14 @@
 <link rel="stylesheet" href="moderne.css" />
 <style>
   /* styles détaillés */
-  .styles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--rl);overflow:hidden}
+  .styles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--rl);overflow:hidden}
   .style{background:var(--ink);padding:32px 30px;transition:.25s;position:relative}
   .style:hover{background:var(--coal2)}
   .style .num{font-family:'Fira Sans Condensed',sans-serif;font-weight:700;font-size:13px;color:var(--mut)}
   .style h3{font-family:'Fira Sans Condensed',sans-serif;font-weight:700;font-size:26px;margin:18px 0 10px;letter-spacing:-.01em}
   .style p{font-size:14.5px;color:#bababa;line-height:1.6}
   .style .lvl{margin-top:18px;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--red)}
-  @media(max-width:860px){.styles-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:960px){.styles-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.styles-grid{grid-template-columns:1fr}}
 
   /* planning */
@@ -150,7 +150,7 @@
       <a href="/professeurs">Les professeurs</a>
       <a href="/tarifs">Tarifs</a>
       <a href="/contact">Contact</a>
-      <a class="btn btn-red" href="mailto:cercledesdanseursdisparus@gmail.com?subject=Demande%20de%20cours%20d%27essai%20-%20Cercle%20des%20Danseurs%20Disparus">Cours d'essai</a>
+      <a class="btn btn-red" href="https://docs.google.com/forms/d/e/1FAIpQLSeXAdJ4B8Dr3se_7oLj5BZ57KyVhqBpq8KKKDBNUeqoxBCbdw/viewform" target="_blank" rel="noopener">Cours d'essai</a>
     </nav>
     <button class="mburger" aria-label="Menu">☰</button>
   </div>
@@ -160,7 +160,7 @@
 <section class="phead has-photo">
   <div class="phead-bg"><img src="assets/gal-22.jpg" alt="Cours de danse hip-hop au Cercle des Danseurs Disparus"  loading="eager" fetchpriority="high" /></div>
   <div class="container">
-    <h1><span class="kicker">Cours de danse hip-hop à Toulouse</span>Trouve <em>ton style</em>.</h1>
+    <h1><span class="kicker">Cours de danse hip-hop à Toulouse</span>Nos <em>cours</em>.</h1>
     <p>Six disciplines hip-hop, du break au contemporain urbain, pensées pour tous les âges et tous les niveaux. Encadrées par les professeurs du Cercle.</p>
   </div>
 </section>
@@ -191,12 +191,14 @@
       <h2>Ce que l'on <em>danse</em> ici</h2>
     </div>
     <div class="styles-grid reveal">
-      <div class="style"><span class="num">01</span><h3>Cours de hip-hop</h3><p>Le vocabulaire debout : groove, musicalité, énergie et chorégraphie collective. Le cœur de la culture.</p><div class="lvl">Ados · Adultes</div></div>
-      <div class="style"><span class="num">02</span><h3>Cours de house</h3><p>Footwork rapide, jacking et fluidité sur la house music. Le pied léger et le groove sans fin.</p><div class="lvl">Tous niveaux</div></div>
-      <div class="style"><span class="num">03</span><h3>Cours d'urban contemporain</h3><p>La rencontre du hip-hop et de la danse contemporaine. La signature artistique du Cercle.</p><div class="lvl">Débutant · Intermédiaire</div></div>
-      <div class="style"><span class="num">04</span><h3>Cours de floorwork</h3><p>Le travail au sol : fluidité, appuis et déplacements. Un pont entre hip-hop et contemporain.</p><div class="lvl">Tous niveaux</div></div>
-      <div class="style"><span class="num">05</span><h3>Cours d'urban street</h3><p>Les fondamentaux des danses de rue : freestyle, énergie et expression personnelle.</p><div class="lvl">Ados · Adultes</div></div>
-      <div class="style"><span class="num">06</span><h3>Éveil danse dès 4 ans</h3><p>Le premier contact avec la danse : jeu, coordination, écoute et plaisir du mouvement.</p><div class="lvl">Dès 4 ans</div></div>
+      <div class="style"><span class="num">01</span><h3>Cours de hip-hop</h3><p>Le vocabulaire debout : groove, musicalité, énergie et chorégraphie collective.</p><div class="lvl">Intermédiaires · Avancés</div></div>
+      <div class="style"><span class="num">02</span><h3>Cours de house</h3><p>Footwork rapide, jacking et fluidité sur la house music.</p><div class="lvl">Intermédiaires · Avancés</div></div>
+      <div class="style"><span class="num">03</span><h3>Cours d'urban contemporain</h3><p>La rencontre du hip-hop et de la danse contemporaine. La signature artistique du Cercle.</p><div class="lvl">Débutants · Intermédiaires · Avancés</div></div>
+      <div class="style"><span class="num">04</span><h3>Cours de floorwork</h3><p>Le travail au sol : fluidité, appuis et déplacements. Un pont entre break et contemporain.</p><div class="lvl">Débutants · Intermédiaires · Avancés</div></div>
+      <div class="style"><span class="num">05</span><h3>Urban Jazz</h3><p>La fusion entre la technique jazz et les influences des danses urbaines.</p><div class="lvl">Débutants · Intermédiaires</div></div>
+      <div class="style"><span class="num">06</span><h3>Boomers</h3><p>Un cours hip-hop sur mesure pour grands adultes débutants.</p><div class="lvl">Débutants</div></div>
+      <div class="style"><span class="num">07</span><h3>Break</h3><p>Le travail au sol : footwork et acrobaties.</p><div class="lvl">À partir de 8 ans</div></div>
+      <div class="style"><span class="num">08</span><h3>Éveil et initiation</h3><p>Le premier contact avec la danse : jeu, coordination, écoute et plaisir du mouvement.</p><div class="lvl">À partir de 4 ans</div></div>
     </div>
   </div>
 </section>
@@ -215,7 +217,7 @@
       <p>L'éveil danse (4 – 6 ans) est le premier contact avec le mouvement : jeu, coordination, écoute et plaisir de danser ensemble. Les enfants rejoignent ensuite les cours de hip-hop enfants (6 – 8 ans, puis 8 – 11 ans), où l'on aborde les bases du break et du hip-hop par des exercices adaptés à leur physiologie. Les horaires de chaque groupe figurent sur le <a class="lnk" href="/planning">planning des cours</a>.</p>
 
       <h3>Cours de danse hip-hop pour <em>adolescents</em></h3>
-      <p>Les ados disposent de leurs propres créneaux (11 – 13 ans et 12 – 16 ans), en hip-hop comme en urban street. Le travail se structure autour du vocabulaire technique, du freestyle et de la recherche d'une identité de danseur — avec la possibilité de monter sur scène lors des spectacles de l'école.</p>
+      <p>Les ados disposent de leurs propres créneaux (11 – 13 ans et 12 – 16 ans), en hip-hop comme en break. Le travail se structure autour du vocabulaire technique et de la recherche d'une identité de danseur — avec la possibilité de monter sur scène lors des spectacles de l'école.</p>
 
       <h3>Cours de danse pour <em>adultes : débutant, intermédiaire ou avancé</em></h3>
       <p>Les cours adultes sont ouverts à tous, sans prérequis. En <b>débutant</b>, on part de zéro : posture, appuis, musicalité, premiers enchaînements. En <b>intermédiaire</b> et en <b>avancé</b>, on consolide une technique déjà installée et on travaille l'interprétation, en hip-hop, house, urban contemporain ou floorwork. Beaucoup de nos danseurs adultes ont commencé sans aucune expérience. Le détail des formules est sur la page <a class="lnk" href="/tarifs">tarifs et inscriptions</a>.</p>
@@ -236,7 +238,7 @@
       <p style="color:#c6c6c6;font-size:17px;margin:18px auto 30px;max-width:480px">Premier cours offert et sans engagement. Découvre nos formules ou réserve directement ton essai.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
         <a class="btn btn-red" href="/tarifs">Voir les tarifs <span class="ar">→</span></a>
-        <a class="btn btn-ghost" href="mailto:cercledesdanseursdisparus@gmail.com?subject=Demande%20de%20cours%20d%27essai%20-%20Cercle%20des%20Danseurs%20Disparus">Réserver un essai</a>
+        <a class="btn btn-red" href="https://docs.google.com/forms/d/e/1FAIpQLSeXAdJ4B8Dr3se_7oLj5BZ57KyVhqBpq8KKKDBNUeqoxBCbdw/viewform" target="_blank" rel="noopener">Réserver un essai</a>
       </div>
     </div>
   </div>

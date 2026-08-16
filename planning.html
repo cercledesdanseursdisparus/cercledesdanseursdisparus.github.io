@@ -76,12 +76,12 @@
   .lg-kids{background:rgba(218,68,60,.16);border:1.5px solid rgba(218,68,60,.4)}
   .lg-new{width:24px;border-radius:100px;background:var(--red)}
   .lg-studio{background:var(--coal2);border:1.5px solid var(--line)}
-  .lg-mz{background:var(--coal2);border:1.5px solid var(--line);border-left:4px solid var(--red);border-radius:4px}
+  .lg-mz{background:rgba(232,161,60,.1);border:1.5px solid rgba(232,161,60,.5);border-left:4px solid #e8a13c;border-radius:4px}
   .planning{overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
-  .week{display:grid;grid-template-columns:repeat(4,minmax(184px,1fr));gap:14px;min-width:780px;align-items:start}
+  .week{display:grid;grid-template-columns:repeat(5,minmax(184px,1fr));gap:14px;min-width:960px;align-items:start}
   .day{display:flex;flex-direction:column;gap:12px}
   .day .dh{font-family:'Fira Sans Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:.05em;padding:12px 16px;min-height:56px;background:var(--coal);border:1px solid var(--line);border-radius:14px;text-align:center;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;justify-content:center}
-  .day .dh.alt{background:var(--red);border-color:var(--red);color:#fff}
+  .day .dh.alt{background:#e8a13c;border-color:#e8a13c;color:#1a1a18;font-weight:800}
   .day .dh .ven{font-family:'Jost',sans-serif;font-weight:500;font-size:9.5px;letter-spacing:.16em;margin-top:3px;text-transform:uppercase;opacity:.9}
   .slot .nm .newp{display:inline-block;margin-left:6px;font-family:'Jost',sans-serif;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--red);color:#fff;padding:2px 7px;border-radius:100px;vertical-align:middle}
   .slot{border-radius:16px;padding:16px 16px 15px;border:1px solid var(--line);background:var(--coal);transition:.25s var(--ease);cursor:default}
@@ -94,7 +94,7 @@
   .slot.exp{background:var(--red);border-color:var(--red)}.slot.exp .time{color:rgba(255,255,255,.8)}.slot.exp .who{color:rgba(255,255,255,.85)}.slot.exp .chip{background:rgba(0,0,0,.18);color:#fff}
   .slot.tous .chip{background:var(--coal2);color:#cdcdcd;border:1px solid var(--line)}
   .slot.kids{background:rgba(209,68,58,.1);border-color:rgba(209,68,58,.35)}.slot.kids .chip{background:rgba(209,68,58,.18);color:var(--ember)}
-  .slot.mz{border-left:3px solid var(--red)}
+  .slot.mz{border:1px solid rgba(232,161,60,.5);border-left:5px solid #e8a13c;background:rgba(232,161,60,.08)}
   .slot.empty{background:transparent;border-style:dashed;border-color:var(--line);min-height:96px;display:flex;align-items:center;justify-content:center;color:var(--mut2);font-size:13px}
 
   /* professeurs */
@@ -150,7 +150,7 @@
       <a href="/professeurs">Les professeurs</a>
       <a href="/tarifs">Tarifs</a>
       <a href="/contact">Contact</a>
-      <a class="btn btn-red" href="mailto:cercledesdanseursdisparus@gmail.com?subject=Demande%20de%20cours%20d%27essai%20-%20Cercle%20des%20Danseurs%20Disparus">Cours d'essai</a>
+      <a class="btn btn-red" href="https://docs.google.com/forms/d/e/1FAIpQLSeXAdJ4B8Dr3se_7oLj5BZ57KyVhqBpq8KKKDBNUeqoxBCbdw/viewform" target="_blank" rel="noopener">Cours d'essai</a>
     </nav>
     <button class="mburger" aria-label="Menu">☰</button>
   </div>
@@ -160,7 +160,7 @@
 <section class="phead has-photo">
   <div class="phead-bg"><img src="assets/gal-14.jpg" alt="Cours de danse au Cercle des Danseurs Disparus"  loading="eager" fetchpriority="high" /></div>
   <div class="container">
-    <h1><span class="kicker">Planning des cours de danse hip-hop à Toulouse</span>La semaine, <em>heure par heure.</em></h1>
+    <h1><span class="kicker">Planning des cours de danse hip-hop à Toulouse</span>La semaine de <em>cours</em>.</h1>
     <p>Tous les cours hebdomadaires du Cercle, du <a class="lnk" href="/cours">break enfant à l'urban contemporain</a>. Chaque créneau est ouvert sur réservation — le premier cours est toujours offert.</p>
   </div>
 </section>
@@ -168,11 +168,6 @@
 <!-- PLANNING -->
 <section class="section tight coal" id="planning">
   <div class="container">
-    <div class="shead reveal">
-      <span class="kicker">Le planning</span>
-      <h2>La semaine au <em>104</em></h2>
-      <p>Retrouvez tous nos cours de la semaine. Au studio, sauf le mercredi au C.C des Mazades. Horaires donnés à titre indicatif.</p>
-    </div>
     <div class="legend reveal">
       <span class="leg-lab">Niveaux</span>
       <span><i class="lg-kids"></i>Enfants</span>
@@ -191,7 +186,7 @@
           <div class="slot kids"><div class="time">18h – 19h</div><div class="nm">Hip-Hop Rookies</div><span class="chip">8 – 11 ans</span></div>
           <div class="slot tous"><div class="time">19h – 20h</div><div class="nm">House</div><span class="chip">Adulte</span></div>
           <div class="slot tous"><div class="time">20h – 21h</div><div class="nm">Hip-Hop</div><span class="chip">Adulte</span></div>
-          <div class="slot tous"><div class="time">21h – 22h</div><div class="nm">Urban Jazz <span class="newp">New</span></div><span class="chip">Adulte</span></div>
+          <div class="slot exp"><div class="time">21h – 22h</div><div class="nm">Urban Jazz <span class="newp">New</span></div><span class="chip">Adulte</span></div>
         </div>
         <div class="day">
           <div class="dh alt">Mercredi<span class="ven">C.C des Mazades</span></div>
@@ -202,15 +197,19 @@
           <div class="dh">Jeudi</div>
           <div class="slot kids"><div class="time">17h30 – 18h15</div><div class="nm">Hip-Hop Éveil</div><span class="chip">4 – 6 ans</span></div>
           <div class="slot kids"><div class="time">18h15 – 19h</div><div class="nm">Hip-Hop Initiation</div><span class="chip">6 – 8 ans</span></div>
-          <div class="slot tous"><div class="time">19h – 20h</div><div class="nm">Hip-Hop Boomers</div><span class="chip">Adulte</span></div>
+          <div class="slot deb"><div class="time">19h – 20h</div><div class="nm">Hip-Hop Boomers</div><span class="chip">Débutant</span></div>
           <div class="slot deb"><div class="time">20h – 21h</div><div class="nm">Urban Contempo</div><span class="chip">Débutant</span></div>
         </div>
         <div class="day">
           <div class="dh">Vendredi</div>
           <div class="slot kids"><div class="time">18h – 19h</div><div class="nm">Hip-Hop Ados</div><span class="chip">12 – 16 ans</span></div>
           <div class="slot deb"><div class="time">19h – 20h</div><div class="nm">Floorwork</div><span class="chip">Débutant</span></div>
-          <div class="slot exp"><div class="time">20h – 21h</div><div class="nm">Urban Contempo</div><span class="chip">Inter · Avancé</span></div>
-          <div class="slot exp"><div class="time">21h – 22h</div><div class="nm">Floorwork</div><span class="chip">Inter · Avancé</span></div>
+          <div class="slot tous"><div class="time">20h – 21h</div><div class="nm">Urban Contempo</div><span class="chip">Inter · Avancé</span></div>
+          <div class="slot tous"><div class="time">21h – 22h</div><div class="nm">Floorwork</div><span class="chip">Inter · Avancé</span></div>
+        </div>
+        <div class="day">
+          <div class="dh">Samedi</div>
+          <div class="slot tous"><div class="time">14h – 16h</div><div class="nm">Concours et scènes</div><span class="chip">Tous niveaux</span></div>
         </div>
       </div>
     </div>
@@ -228,7 +227,7 @@
       </div>
       <div class="ptcta-act">
         <a class="btn btn-red" href="/tarifs">Voir les tarifs &amp; formules <span class="ar">→</span></a>
-        <a class="btn btn-out" href="mailto:cercledesdanseursdisparus@gmail.com?subject=Demande%20de%20cours%20d%27essai%20-%20Cercle%20des%20Danseurs%20Disparus">Réserver un essai</a>
+        <a class="btn btn-red" href="https://docs.google.com/forms/d/e/1FAIpQLSeXAdJ4B8Dr3se_7oLj5BZ57KyVhqBpq8KKKDBNUeqoxBCbdw/viewform" target="_blank" rel="noopener">Réserver un essai</a>
       </div>
     </div>
   </div>
