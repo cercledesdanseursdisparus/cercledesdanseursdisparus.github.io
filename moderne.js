@@ -47,17 +47,17 @@
     document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !lb.hasAttribute('hidden')) closeLb(); });
   }
 
-  // Popup rentrée
-  var modal = document.getElementById('rentree');
-  if(modal){
-    function closeModal(){ modal.setAttribute('hidden',''); document.body.style.overflow=''; }
-    function openModal(){ modal.removeAttribute('hidden'); document.body.style.overflow='hidden'; }
-    setTimeout(openModal, 650);
-    modal.querySelectorAll('[data-close]').forEach(function(el){
-      el.addEventListener('click', closeModal);
+  // Visite 360° : la visite s'ouvre dans la page, au clic seulement (fichier lourd)
+  document.querySelectorAll('[data-visite]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var box = btn.closest('.visite360');
+      if(!box || box.classList.contains('on')) return;
+      var f = document.createElement('iframe');
+      f.src = btn.getAttribute('data-visite');
+      f.title = 'Visite 360° de la salle';
+      f.setAttribute('allow', 'fullscreen; autoplay; encrypted-media; picture-in-picture');
+      f.setAttribute('allowfullscreen', '');
+      box.appendChild(f); box.classList.add('on'); f.focus();
     });
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
-    });
-  }
+  });
 })();

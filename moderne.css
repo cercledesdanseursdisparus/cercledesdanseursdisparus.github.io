@@ -418,3 +418,28 @@ a.lnk:hover{border-bottom-color:var(--red)}
   .ptcta-act,.hero-cta,.hcta{flex-wrap:wrap}
   .btn{white-space:normal}
 }
+
+/* ---------- bouton WhatsApp ---------- */
+.btn-wa{background:#25D366;color:#0b0b0b}
+.btn-wa:hover{background:#1fb95a}
+.btn-wa svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}
+.mfoot .fwa{margin-top:22px;padding:11px 20px;font-size:14px}
+
+/* ---------- visite 360° (page contact) ---------- */
+.visite360{position:relative;margin-top:48px;border-radius:var(--rl);overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9;background:#000}
+.visite360>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.visite360::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.74) 40%,rgba(0,0,0,0) 72%);pointer-events:none}
+.v360-txt{position:absolute;top:0;bottom:0;left:0;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:44px;max-width:520px}
+.v360-txt h3{font-family:'Fira Sans Condensed',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,44px);line-height:1.05;margin:14px 0;color:#fff}
+.v360-txt h3 em{font-style:normal;color:var(--red)}
+.v360-txt p{font-size:16px;line-height:1.7;color:#d9d9d9;margin-bottom:24px}
+.v360-txt .btn{align-self:flex-start}
+.visite360 iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2;background:#191b1a}
+.visite360.on>img,.visite360.on::after,.visite360.on .v360-txt{display:none}
+@media(max-width:760px){
+  .visite360{aspect-ratio:4/5;margin-top:36px}
+  .visite360.on{aspect-ratio:auto;height:80vh}
+  .visite360>img{object-position:74% center}
+  .visite360::after{background:linear-gradient(0deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.78) 55%,rgba(0,0,0,.2) 100%)}
+  .v360-txt{top:auto;padding:28px 24px;justify-content:flex-end}
+}
