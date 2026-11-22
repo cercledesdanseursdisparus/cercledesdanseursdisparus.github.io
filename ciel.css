@@ -1,0 +1,84 @@
+/* ============ C3D · Le site suit le ciel de Toulouse (version fond noir) ============
+   data-ciel sur <html> : aube | jour | crepuscule | nuit (posé par ciel.js) */
+
+/* Changement d'ambiance en douceur */
+html.ciel-anim body,html.ciel-anim body *{transition:background-color 1.4s ease,color 1.4s ease,border-color 1.4s ease!important}
+
+/* ---------- version « fond noir » : chaque moment a sa nuance de noir ---------- */
+html[data-ciel=aube]{--ink:#0f0b0c;--coal:#191314;--coal2:#231b1d;--line:#352a2c;--lueur:rgba(255,190,205,.2);
+  --horizon:linear-gradient(90deg,rgba(255,191,204,0),#ffbfcc 30%,#ffe0b8 60%,rgba(255,224,184,0))}
+html[data-ciel=jour]{--ink:#111111;--coal:#1b1b1b;--coal2:#252525;--line:#303030;--lueur:rgba(185,215,255,.14);
+  --horizon:linear-gradient(90deg,rgba(150,200,255,0),#96c8ff 30%,#d6ebff 60%,rgba(214,235,255,0))}
+html[data-ciel=crepuscule]{--ink:#03050b;--coal:#090c15;--coal2:#121725;--line:#1d2232;--lueur:rgba(70,100,235,.3);
+  --horizon:linear-gradient(90deg,rgba(60,90,220,0),#3c5adc 35%,#7d93ff 60%,rgba(125,147,255,0))}
+html[data-ciel=nuit]{--ink:#010205;--coal:#05070e;--coal2:#0b0e19;--line:#151a2a;--lueur:rgba(35,50,150,.2);
+  --horizon:linear-gradient(90deg,rgba(30,40,110,0),#1e2a78 35%,#34449e 60%,rgba(52,68,158,0))}
+
+/* le menu prend la nuance du moment */
+html[data-ciel] .mnav{background:var(--ink)}
+/* ligne d'horizon colorée sous le menu (toutes les pages) */
+html[data-ciel] .mnav::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--horizon);opacity:1;transition:opacity 1.4s ease}
+/* lueur du ciel en haut de l'écran, qui reste pendant le défilement */
+html[data-ciel] body::before{content:"";position:fixed;left:0;right:0;top:0;height:70vh;z-index:79;pointer-events:none;
+  background:radial-gradient(ellipse 75% 70% at 50% -8%,var(--lueur),rgba(0,0,0,0) 72%)}
+
+/* ---------- voile de couleur léger sur le haut de la photo d'accueil ---------- */
+.ciel-voile{position:absolute;inset:0;z-index:1;pointer-events:none}
+.ciel-voile i{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease}
+.ciel-voile [data-p=aube]{background:linear-gradient(180deg,rgba(255,190,200,0.5) 0%,rgba(255,190,200,0.38) 8%,rgba(255,190,200,0.225) 16%,rgba(255,190,200,0.1) 24%,rgba(255,190,200,0.03) 32%,rgba(255,190,200,0.0) 40%);mix-blend-mode:screen}
+.ciel-voile [data-p=jour]{background:linear-gradient(180deg,rgba(170,214,255,0.42) 0%,rgba(170,214,255,0.319) 8%,rgba(170,214,255,0.189) 16%,rgba(170,214,255,0.084) 24%,rgba(170,214,255,0.025) 32%,rgba(170,214,255,0.0) 40%);mix-blend-mode:screen}
+.ciel-voile [data-p=crepuscule]{background:linear-gradient(180deg,rgba(30,45,125,0.95) 0%,rgba(30,45,125,0.722) 8%,rgba(30,45,125,0.427) 16%,rgba(30,45,125,0.19) 24%,rgba(30,45,125,0.057) 32%,rgba(30,45,125,0.0) 40%);mix-blend-mode:multiply}
+.ciel-voile [data-p=nuit]{background:linear-gradient(180deg,rgba(8,14,60,0.97) 0%,rgba(8,14,60,0.85) 10%,rgba(8,14,60,0.6) 20%,rgba(8,14,60,0.35) 30%,rgba(8,14,60,0.15) 40%,rgba(8,14,60,0) 50%);mix-blend-mode:multiply}
+.ciel-voile i.lune{background:linear-gradient(180deg,rgba(60,90,210,0) 0%,rgba(60,90,210,0.05) 10%,rgba(60,90,210,0.14) 18%,rgba(60,90,210,0.27) 28%,rgba(60,90,210,0.33) 38%,rgba(60,90,210,0.28) 50%,rgba(60,90,210,0.16) 62%,rgba(60,90,210,0.06) 74%,rgba(60,90,210,0) 86%);mix-blend-mode:screen}
+.ciel-voile i.lune.lune-nuit{background:linear-gradient(180deg,rgba(45,65,170,0) 0%,rgba(45,65,170,0) 12%,rgba(45,65,170,0.04) 20%,rgba(45,65,170,0.1) 30%,rgba(45,65,170,0.14) 40%,rgba(45,65,170,0.11) 52%,rgba(45,65,170,0.05) 66%,rgba(45,65,170,0) 80%)}
+html[data-ciel=nuit] .mhero .hbg img{filter:contrast(1.06) brightness(.86)}
+.mhero .hbg img{transition:filter 1.8s ease}
+html[data-ciel=aube] .ciel-voile [data-p=aube],html[data-ciel=jour] .ciel-voile [data-p=jour],
+html[data-ciel=crepuscule] .ciel-voile [data-p=crepuscule],html[data-ciel=nuit] .ciel-voile [data-p=nuit]{opacity:1}
+
+/* ---------- « En ce moment au Cercle » (accueil et planning, voir maintenant.js) ---------- */
+.cercle-live{display:inline-flex;align-items:center;gap:9px;align-self:center;margin-left:6px;max-width:100%;font-size:13px;line-height:1.35;letter-spacing:.02em;color:#f3f3f1;padding:8px 15px;border-radius:999px;background:rgba(0,0,0,.38);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);text-decoration:none;transition:border-color .2s}
+.cercle-live:hover{border-color:var(--red)}
+.cercle-live b{font-weight:600}
+.cercle-live .point{width:8px;height:8px;border-radius:50%;background:#9a9a94;flex:none}
+.cercle-live.live{border-color:rgba(218,68,60,.75);background:rgba(218,68,60,.22)}
+.cercle-live.live .point{background:var(--red);animation:c3d-live 1.6s infinite}
+.cercle-live.surpage{display:flex;width:max-content;max-width:100%;margin:0 0 22px;color:var(--paper);background:var(--coal);border-color:var(--line);backdrop-filter:none}
+.slot.maintenant{border-color:var(--red)!important;box-shadow:0 0 0 3px rgba(218,68,60,.35),0 18px 40px -22px rgba(218,68,60,.9)}
+.slot.prochain{border-style:dashed!important;border-color:var(--red)!important}
+.slot .etat{display:flex;align-items:center;gap:6px;margin-bottom:8px;font:600 10px Jost,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.slot.exp .etat{color:#fff}
+.slot .etat i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.slot.maintenant .etat i{animation:c3d-live 1.6s infinite}
+@keyframes c3d-live{0%{box-shadow:0 0 0 0 rgba(218,68,60,.7)}70%{box-shadow:0 0 0 8px rgba(218,68,60,0)}100%{box-shadow:0 0 0 0 rgba(218,68,60,0)}}
+/* mobile : toujours 2 lignes (titre / détail), pour que la page ne bouge pas quand le texte change */
+@media (max-width:760px){
+  .cercle-live{margin:6px 0 0;border-radius:18px;width:100%}
+  .cercle-live .txt{display:flex;flex-direction:column;min-width:0}
+  .cercle-live .sep{display:none}
+  .cercle-live b,.cercle-live .det{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+}
+@media (prefers-reduced-motion:reduce){.cercle-live .point,.slot .etat i{animation:none!important}}
+
+/* ---------- bouton de choix de l'ambiance ---------- */
+.mfoot .mfoot-bot{padding-bottom:64px} /* laisse la place au bouton d'ambiance en bas de page */
+.ciel-ctrl{position:fixed;left:16px;bottom:16px;z-index:90;font-family:'Jost',sans-serif}
+.ciel-btn{display:flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;border:1px solid var(--line-soft);
+  background:var(--coal2);background:color-mix(in srgb,var(--coal2) 86%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  color:var(--paper);font:500 13px 'Jost',sans-serif;cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.28)}
+.ciel-btn:hover{border-color:var(--red)}
+.ciel-ctrl .ic{display:inline-flex;width:17px;height:17px;flex:none}
+.ciel-ctrl .ic svg{width:100%;height:100%}
+.ciel-menu .ciel-info{display:flex;align-items:center;gap:9px;margin:0 0 4px;padding:10px 12px 11px;border-bottom:1px solid var(--line);font-size:12.5px;line-height:1.4;color:var(--mut)}
+.ciel-menu .ciel-info .ic{color:var(--red)}
+.ciel-menu{position:absolute;left:0;bottom:calc(100% + 8px);min-width:240px;max-height:calc(100vh - 90px);overflow:auto;background:var(--coal);border:1px solid var(--line);border-radius:16px;padding:6px;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.ciel-menu[hidden]{display:none}
+.ciel-menu button{display:flex;align-items:center;gap:10px;width:100%;padding:9px 12px;border:0;border-radius:10px;background:none;color:var(--paper);font:400 14px 'Jost',sans-serif;text-align:left;cursor:pointer}
+.ciel-menu button:hover{background:rgba(127,127,127,.12)}
+.ciel-menu button[aria-checked=true]{background:rgba(218,68,60,.14);color:var(--red)}
+.ciel-menu [data-demo]{margin-top:4px;border-top:1px solid var(--line);border-radius:0 0 10px 10px;padding-top:11px}
+
+@media (prefers-reduced-motion:reduce){
+  html.ciel-anim body,html.ciel-anim body *{transition:none!important}
+  .ciel-voile i{transition:none}
+}
